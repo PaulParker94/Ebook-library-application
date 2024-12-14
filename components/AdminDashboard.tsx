@@ -1,4 +1,5 @@
 // Import React hooks, components and necessary modules 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import {
   Drawer,
@@ -114,7 +115,7 @@ export function AdminDashboardTabs() {
                 const selectedId = Number(value);
                 setEbookId(selectedId);
               }}
-              className="mb-6"
+              className="mb-6" {...({} as React.ComponentProps<typeof Select>)}
             >
               {/* Iterate over the ebooks array and create an option for each ebook */} 
               {ebooks.map((ebook) => (
@@ -133,15 +134,17 @@ export function AdminDashboardTabs() {
 
                 {/* Show cover image only when an ebook is selected */}
                 {ebooks.find((ebook) => ebook.id === ebookId)?.coverPageUrl && (
-                  <img
-                    src={ebooks.find((ebook) => ebook.id === ebookId)?.coverPageUrl}
-                    alt={ebooks.find((ebook) => ebook.id === ebookId)?.title}
-                    className="mt-12 h-80 w- 72 lg:h-96 lg:w-80 mx-auto hover:-translate-y-1 hover:scale-110 duration-300"
+                  <Image
+                    src={ebooks.find((ebook) => ebook.id === ebookId)?.coverPageUrl || "/default-image.jpg"} 
+                    alt={ebooks.find((ebook) => ebook.id === ebookId)?.title || "Default Title"}
+                    className="mt-12 h-80 w-72 lg:h-96 lg:w-80 mx-auto hover:-translate-y-1 hover:scale-110 duration-300"
+                    width={288} 
+                    height={320} 
                   />
                 )}
 
                 <a
-                  href={ebooks.find((ebook) => ebook.id === ebookId)?.fileUrl || "#"} // Link to the ebook's file, opens in a new tab
+                  href={ebooks.find((ebook) => ebook.id === ebookId)?.fileUrl || "#"} // Link to the ebooks file, opens in a new tab
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm lg:text-base font-light text-red-500 underline mt-6 block hover:text-red-400"
@@ -187,17 +190,17 @@ export function AdminDashboardTabs() {
     <>
       {/* Button to open the tab drawer */}
       <div className="flex items-center justify-center">
-        <Button className="text-sm font-semibold" color="red" onClick={openDrawer}>
+        <Button className="text-sm font-semibold" color="red" onClick={openDrawer} {...({} as React.ComponentProps<typeof Button>)}>
           Open Menu
         </Button>
       </div>
 
       {/* Drawer component to show tabs */}
-      <Drawer open={open} onClose={closeDrawer} className="p-4 w-64">
+      <Drawer {...({} as React.ComponentProps<typeof Drawer>)} open={open} onClose={closeDrawer} className="p-4 w-64">
         <Tabs value={selectedTab} orientation="vertical">
-          <TabsHeader>
+          <TabsHeader {...({} as React.ComponentProps<typeof TabsHeader>)}>
             {data.map(({ label, value, icon }) => (
-              <Tab key={value} value={value} onClick={() => handleTabChange(value)}>
+              <Tab {...({} as React.ComponentProps<typeof Tab>)} key={value} value={value} onClick={() => handleTabChange(value)}>
                 <div className="flex items-center gap-6 m-2">
                   {React.createElement(icon, { className: "w-5 h-5" })} {/* Render the tab icon */}
                   {label} {/* Render the tab label */}

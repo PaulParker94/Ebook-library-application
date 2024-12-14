@@ -4,7 +4,7 @@
 //Import React hooks and import necessary modules and components
 import { useEffect, useState, useCallback } from "react";
 import Navbar from "../../components/Navbar";
-import BarChart from '../../components/BarChart'; 
+import BarChart from "../../components/BarChart"; 
 import {
   Menu,
   MenuHandler,
@@ -43,14 +43,14 @@ const VisualisationsPage = () => {
 
     // Initialise new variable as empty array and store sorted data
     let sortedData: Point[] = [];
-    if (order === 'alphabetical') {
-      sortedData = [...points].sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically by comparing strings with '.localeCompare'
-    } else if (order === 'frequency') {
+    if (order === "alphabetical") {
+      sortedData = [...points].sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically by comparing strings with .localeCompare
+    } else if (order === "frequency") {
       sortedData = [...points].sort((a, b) => b.download_count - a.download_count); // Sorting is done by subtracting `a.download_count` from `b.download_count` to arrange the elements from highest to lowest download count
     }
 
-    setSortedPoints(sortedData); // Update the state variable with the newly sorted array 'sortedData'
-  }, [points]); // The `sortData` function will run whenever the `points` array changes
+    setSortedPoints(sortedData); // Update the state variable with the newly sorted array sortedData
+  }, [points]); // The sortData function will run whenever the points array changes
 
   // Fetch data from the API when the component loads
   useEffect(() => {
@@ -94,20 +94,20 @@ const VisualisationsPage = () => {
               {/* Filter Menu for sorting options */}
               <Menu animate={{ mount: { y: 0 }, unmount: { y: 25 } }}>
                 <MenuHandler>
-                  <Button className="bg-gray-50 text-custom-gray my-4 items-start text-sm sm:text-base md:text-lg px-3 sm:px-5 md:px-4 py-2 sm:py-2">
+                  <Button className="bg-gray-50 text-custom-gray my-4 items-start text-sm sm:text-base md:text-lg px-3 sm:px-5 md:px-4 py-2 sm:py-2" {...({} as React.ComponentProps<typeof Button>)}>
                     Filters
                   </Button>
                 </MenuHandler>
-                <MenuList className="w-auto sm:w-48 md:w-64">
+                <MenuList className="w-auto sm:w-48 md:w-64" {...({} as React.ComponentProps<typeof MenuList>)}>
                   <MenuItem
                     className={`flex items-center justify-center font-semibold text-custom-gray underline hover:text-gray-500 hover:focus:text-gray-500 py-2 text-sm sm:text-base ${sortOrder === "alphabetical" ? "bg-gray-200" : ""}`}
-                    onClick={() => handleSortChange("alphabetical")}
+                    onClick={() => handleSortChange("alphabetical")} {...({} as React.ComponentProps<typeof MenuItem>)}
                   >
                     Alphabetical
                   </MenuItem>
                   <MenuItem
                     className={`flex items-center justify-center font-semibold text-custom-gray underline hover:text-gray-500 hover:focus:text-gray-500 py-2 text-sm sm:text-base ${sortOrder === "frequency" ? "bg-gray-200" : ""}`}
-                    onClick={() => handleSortChange("frequency")}
+                    onClick={() => handleSortChange("frequency")} {...({} as React.ComponentProps<typeof MenuItem>)}
                   >
                     Popular
                   </MenuItem>
@@ -118,7 +118,7 @@ const VisualisationsPage = () => {
           </div>
         )}
 
-        {/* A "No data available" message when there's no data to display. */}
+        {/* A No data available message when there is no data to display. */}
         {!loading && !error && sortedPoints.length === 0 && (
           <p>No data available to display</p>
         )}

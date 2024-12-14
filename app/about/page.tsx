@@ -7,7 +7,7 @@ import AboutPage from "../../components/AboutPage";
 import { DefaultAccordion } from "../../components/DefaultAccordion";
 import { Footer } from "../../components/Footer";
 
-// Create and export the 'AboutHome' function
+// Create and export the AboutHome function
 export default function AboutHome() {
   return (
     // Flexbox layout container

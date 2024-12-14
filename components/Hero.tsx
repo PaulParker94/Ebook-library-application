@@ -2,6 +2,7 @@
 "use client";
 
 // Import the components from the components directory and import necessary modules
+import Image from 'next/image';
 import { useEffect } from "react";
 import { CardDefault } from "./InfoCard";
 import { CarouselCustomNavigation } from "./ImageCarousel";
@@ -151,12 +152,14 @@ export default function Hero() {
   return (
     <div className="bg-gray-50">
     {/* Scroll Up Arrow */}
-    <img
+    <Image
       className="fixed right-6 bottom-6 lg:justify-end h-8 w-auto z-50 animate-bounce cursor-pointer"
-       src="images/arrow-up.svg"
-       alt="Arrow Up"
-       onClick={() => scrollToSection("homeSection")} // Call scrollToSection when clicked
-     />
+      src="/images/arrow-up.svg" 
+      alt="Arrow Up"
+      width={32}  
+      height={32} 
+      onClick={() => scrollToSection("homeSection")} // Call scrollToSection when clicked
+    />
 
       {/* Hero Section */}
       <div className="relative isolate px-6 pt-0 lg:px-48 bg-hero-pattern bg-no-repeat bg-center bg-cover min-h-screen w-full" id="homeSection">

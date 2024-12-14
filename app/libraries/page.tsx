@@ -9,7 +9,7 @@ import { Footer } from "../../components/Footer";
 // Disable server-side rendering for the Map component
 const Map = dynamic(() => import("../../components/Map"), { ssr: false });
 
-// Create and export the 'LibrariesPage' function
+// Create and export the LibrariesPage function
 export default function LibrariesPage() {
   return (
     // Flexbox layout container

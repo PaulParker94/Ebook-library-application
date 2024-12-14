@@ -71,7 +71,7 @@ const LoginForm = () => {
           value={email} 
           onChange={(e) => setEmail(e.target.value)} // Update email on change
           required 
-          label="Email Address" 
+          label="Email Address" {...({} as React.ComponentProps<typeof Input>)}
         />
       </div>
 
@@ -85,7 +85,7 @@ const LoginForm = () => {
           value={password} 
           onChange={(e) => setPassword(e.target.value)} // Update password on change
           required 
-          label="Password" 
+          label="Password" {...({} as React.ComponentProps<typeof Input>)}
         />
 
         {/* Eye Icon */}
@@ -108,7 +108,7 @@ const LoginForm = () => {
       </a>
 
       {/* Submit Button */}
-      <Button variant="outlined" color="white" type="submit">
+      <Button variant="outlined" color="white" type="submit" {...({} as React.ComponentProps<typeof Button>)}>
         Login
       </Button>
 

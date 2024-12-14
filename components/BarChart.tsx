@@ -46,10 +46,12 @@ const BarChart = ({ data }: { data: Point[] }) => {
 
     // Plot the 'data' array on the bar chart, using the 'title' as a unique identifier for each bar
     const bars = svg.selectAll("rect")
+      // @ts-expect-error data type d is unknown[] causing typescript to raise error over title property not being guaranteed
       .data(data, d => d.title); 
 
     // Create and animate bars with transition effects
     bars.join("rect")
+      // @ts-expect-error data type d is unknown[] causing typescript to raise error over title property not being guaranteed
       .attr("x", d => x(d.title))
       .attr("y", d => y(d.download_count))
       .attr("height", d => y(0) - y(d.download_count))
@@ -62,6 +64,7 @@ const BarChart = ({ data }: { data: Point[] }) => {
     // Add Y-axis and style the text
     svg.append("g")
       .attr("transform", `translate(${marginLeft},0)`)
+      // @ts-expect-error data type d is unknown[] causing typescript to raise error over title property not being guaranteed
       .call(d3.axisLeft(y).tickFormat(d => `${d / 1000}k`))
       .call(g => g.select(".domain").remove())
       .selectAll("text")

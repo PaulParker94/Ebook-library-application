@@ -1,8 +1,8 @@
 // Render the component client-side
-'use client';
+"use client";
 
 // Import the components from the components directory
-import { AdminDashboardTabs } from '@/components/AdminDashboard';
+import { AdminDashboardTabs } from "@/components/AdminDashboard";
 
 const AdminDashboard = () => {
   return (

@@ -2,6 +2,7 @@
 "use client";
 
 // Import React hooks and import the Link component for navigation between pages
+import Image from 'next/image';
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -19,7 +20,7 @@ const Navbar = () => {
   // State to track the hamburger menu open/close state
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // State to control the logo source
-  const [logoSrc, setLogoSrc] = useState("images/home_icon_w.png");
+  const [logoSrc, setLogoSrc] = useState("/images/home_icon_w.png");
 
   // Handle scroll to change navbar styles based on scroll position
   useEffect(() => {
@@ -31,7 +32,7 @@ const Navbar = () => {
         setBgColor("bg-transparent");
         setFontColor("text-white");
         setButtonColor("text-white");
-        setLogoSrc("images/home_icon_w.png");
+        setLogoSrc("/images/home_icon_w.png");
       } else if (currentScrollY > lastScrollY) {
         // Hide navbar on scroll down
         setIsVisible(false);
@@ -42,7 +43,7 @@ const Navbar = () => {
         setBgColor("bg-gray-200");
         setFontColor("text-black");
         setButtonColor("text-black");
-        setLogoSrc("images/home_icon.png");
+        setLogoSrc("/images/home_icon.png");
       }
 
       // Update the last scroll position
@@ -71,7 +72,13 @@ const Navbar = () => {
         {/* Logo */}
         <div>
           <Link href="/" className="flex items-center animate-pulse">
-            <img src={logoSrc} alt="Logo" className="h-6 w-auto" />
+          <Image
+            src={logoSrc}  
+            alt="Logo"  
+            className="h-6 w-auto"  
+            width={24}  
+            height={24}  
+          />
           </Link>
         </div>
 

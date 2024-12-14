@@ -1,9 +1,9 @@
 // Import necessary styles and components
-import './/../globals.css';
+import ".//../globals.css";
 import Navbar from "../../components/Navbar"; // Import Navbar component
-import LoginForm from '../../components/LoginForm'; // Import LoginForm component
+import LoginForm from "../../components/LoginForm"; // Import LoginForm component
 
-// Create and export the 'Login' function
+// Create and export the Login function
 export default function Login() {
   return (
     // Outer container

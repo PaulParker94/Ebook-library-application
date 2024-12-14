@@ -34,7 +34,7 @@ const DeleteEbookForm: React.FC<DeleteEbookForm> = ({ ebooks, ebookId, onDelete,
         label="Select Ebook to Delete" 
         value={ebookId?.toString() || ""} // Set the value to the currently selected ebook ID
         onChange={(e) => onSelect(Number(e))} // When a new option is chosen update selection
-        className="mb-4 w-full"
+        className="mb-4 w-full" {...({} as React.ComponentProps<typeof Select>)}
       >
         {/* Create an option for each ebook  */}
         {ebooks.map((ebook) => (
@@ -47,7 +47,7 @@ const DeleteEbookForm: React.FC<DeleteEbookForm> = ({ ebooks, ebookId, onDelete,
       {/* Show delete button on selection of ebook */}
       {ebookId && (
         <div className="flex justify-center w-2/5 lg:w-full mt-6">
-          <Button color="red" onClick={() => handleDelete(ebookId)} className="w-full sm:w-auto">
+          <Button color="red" onClick={() => handleDelete(ebookId)} className="w-full sm:w-auto" {...({} as React.ComponentProps<typeof Button>)}>
             Delete Ebook
           </Button>
         </div>

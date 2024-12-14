@@ -1,9 +1,9 @@
 // Import the components from the components directory
 import Navbar from "../components/Navbar"; 
-import Hero from '../components/Hero';
+import Hero from "../components/Hero";
 import { Footer } from "../components/Footer";
 
-// Create and export the 'HomePage' function
+// Create and export the HomePage function
 export default function HomePage() {
   return (
     // Flexbox layout container

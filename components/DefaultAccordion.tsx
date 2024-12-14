@@ -12,15 +12,16 @@ export function DefaultAccordion() {
   const [open, setOpen] = React.useState(1);
 
   // Function to handle opening and closing the accordion
+  // @ts-expect-error raising unnecessary error
   const handleOpen = (value) => setOpen(open === value ? 0 : value); // Toggle the opened state based on value
 
   return (
     <>
       {/* Accordion 1 */}
-      <Accordion open={open === 1}>
+      <Accordion {...({} as React.ComponentProps<typeof Accordion>)} open={open === 1}>
         <AccordionHeader
           className="bg-custom-black text-white text-sm lg:text-lg"
-          onClick={() => handleOpen(1)}
+          onClick={() => handleOpen(1)} {...({} as React.ComponentProps<typeof AccordionHeader>)}
         >
           What is Project Gutenberg?
         </AccordionHeader>
@@ -30,16 +31,16 @@ export function DefaultAccordion() {
           Michael Hart, founder of Project Gutenberg, invented eBooks in 1971 and
           his memory continues to inspire the creation of eBooks and related
           content today. Project Gutenberg is a volunteer effort to digitize and
-          archive cultural works, as well as to "encourage the creation and
-          distribution of eBooks."
+          archive cultural works, as well as to &quot;encourage the creation and
+          distribution of eBooks.&quot;
         </AccordionBody>
       </Accordion>
 
       {/* Accordion 2 */}
-      <Accordion open={open === 2}>
+      <Accordion {...({} as React.ComponentProps<typeof Accordion>)} open={open === 2}>
         <AccordionHeader
           className="bg-custom-black text-white text-sm lg:text-lg"
-          onClick={() => handleOpen(2)}
+          onClick={() => handleOpen(2) } {...({} as React.ComponentProps<typeof AccordionHeader>)}
         >
           What is the Gutendex API?
         </AccordionHeader>
@@ -54,10 +55,10 @@ export function DefaultAccordion() {
       </Accordion>
 
       {/* Accordion 3 */}
-      <Accordion open={open === 3}>
+      <Accordion {...({} as React.ComponentProps<typeof Accordion>)} open={open === 3}>
         <AccordionHeader
           className="bg-custom-black text-white text-sm lg:text-lg"
-          onClick={() => handleOpen(3)}
+          onClick={() => handleOpen(3)} {...({} as React.ComponentProps<typeof AccordionHeader>)}
         >
           How does the Gutendex API work?
         </AccordionHeader>
@@ -73,10 +74,10 @@ export function DefaultAccordion() {
       </Accordion>
 
       {/* Accordion 4 */}
-      <Accordion open={open === 4}>
+      <Accordion {...({} as React.ComponentProps<typeof Accordion>)} open={open === 4}>
         <AccordionHeader
           className="bg-custom-black text-white text-sm lg:text-lg"
-          onClick={() => handleOpen(4)}
+          onClick={() => handleOpen(4)} {...({} as React.ComponentProps<typeof AccordionHeader>)}
         >
           Our Mission Statement
         </AccordionHeader>

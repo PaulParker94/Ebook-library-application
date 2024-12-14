@@ -1,4 +1,5 @@
 // Import React hooks, token and necessary modules
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import jwt from 'jsonwebtoken';
 import {
@@ -104,23 +105,29 @@ export function AdminProfileCard() {
 
   return (
     <div className="flex items-center justify-center min-h-screen p-2">
-      <Card className="min-h-screen w-full sm:w-4/5 md:w-2/5">
-        <CardHeader floated={false} className="h-60 lg:h-80">
+      <Card className="min-h-screen w-full sm:w-4/5 md:w-2/5" {...({} as React.ComponentProps<typeof Card>)}>
+        <CardHeader floated={false} className="h-60 lg:h-80" {...({} as React.ComponentProps<typeof CardHeader>)}>
           {/* If selectedImage is not set, fallback to default */}
-          <img src={selectedImage || '../images/avatar-man-1.svg'} alt="profile-picture" />
+          <Image
+            src={selectedImage || '/images/avatar-man-1.svg'}  
+            alt="profile-picture"
+            width={500}  
+            height={300} 
+            className="rounded-full" 
+          />
         </CardHeader>
-        <CardBody className="text-center">
-         <Typography variant="h4" color="blue-gray" className="underline my-4 lg:my-2 text-x1 lg:text-3xl">
+        <CardBody className="text-center" {...({} as React.ComponentProps<typeof CardBody>)}>
+         <Typography variant="h4" color="blue-gray" className="underline my-4 lg:my-2 text-x1 lg:text-3xl" {...({} as React.ComponentProps<typeof Typography>)}>
             {username}
           </Typography>
-          <Typography color="blue-gray" className="mt-12 text-lg lg:text-2xl">
+          <Typography color="blue-gray" className="mt-12 text-lg lg:text-2xl" {...({} as React.ComponentProps<typeof Typography>)}>
             {email}
           </Typography>
         </CardBody>
-        <CardFooter className="flex justify-center gap-7 pt-2">
+        <CardFooter className="flex justify-center gap-7 pt-2" {...({} as React.ComponentProps<typeof CardFooter>)}>
           <Button
             onClick={() => setShowPopup(true)} // Open the Popup
-            className="text-xs mt-20"
+            className="text-xs mt-20" {...({} as React.ComponentProps<typeof Button>)}
           >
             Change Profile Picture
           </Button>
@@ -130,7 +137,7 @@ export function AdminProfileCard() {
       {/* Error message */}
       {errorMessage && (
         <div className="text-center text-red-500 mt-4">
-          <Typography>{errorMessage}</Typography>
+          <Typography {...({} as React.ComponentProps<typeof Typography>)}>{errorMessage}</Typography>
         </div>
       )}
 
@@ -147,22 +154,24 @@ export function AdminProfileCard() {
       {showPopup && (
         <div className="fixed inset-0 pb-2 flex items-center justify-center lg:items-center lg:justify-center bg-black bg-opacity-50">
           <div className="bg-white p-2 sm:p-6 rounded-lg shadow-lg w-9/12 sm:w-3/4 md:w-1/2 lg:w-2/3 max-h-[90vh] overflow-y-auto">
-            <Typography variant="h6" className="mb-4 text-center underline">
+            <Typography variant="h6" className="mb-4 text-center underline" {...({} as React.ComponentProps<typeof Typography>)}>
               Choose a Profile Picture
             </Typography>
             <div className="flex flex-wrap justify-center gap-4">
               {imagePool.map((image, index) => (
-                <img
+                <Image
                   key={index}
                   src={image}
                   alt={`avatar ${index + 1}`}
                   className="w-16 h-16 lg:w-24 lg:h-24 rounded-full cursor-pointer border-2 border-transparent hover:border-blue-500"
+                  width={100}  
+                  height={100} 
                   onClick={() => handleImageSelect(image)} // Update image on click
                 />
               ))}
             </div>
             <div className="mt-8 flex justify-center">
-              <Button onClick={() => setShowPopup(false)} color="red">
+              <Button onClick={() => setShowPopup(false)} color="red" {...({} as React.ComponentProps<typeof Button>)}>
                 Close
               </Button>
             </div>

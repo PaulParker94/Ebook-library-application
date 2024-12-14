@@ -58,6 +58,7 @@ export function TestimonialCard({
     testimonialCards.forEach((card) => {
       // Animate each card when it enters the viewport
       gsap.fromTo(
+        // @ts-expect-error raising unnecessary error
         card,
         {
           opacity: 0, // Initial state
@@ -87,35 +88,35 @@ export function TestimonialCard({
     <Card
       color="transparent"
       shadow={false}
-      className="testimonial-card w-full max-w-[26rem] mx-20 my-4"
+      className="testimonial-card w-full max-w-[26rem] mx-20 my-4" {...({} as React.ComponentProps<typeof Card>)}
     >
       <CardHeader
         color="transparent"
         floated={false}
         shadow={false}
-        className="mx-0 flex items-center gap-4 pt-0 pb-8"
+        className="mx-0 flex items-center gap-4 pt-0 pb-8" {...({} as React.ComponentProps<typeof CardHeader>)}
       >
         {/* Avatar and Name Section */}
         <Avatar
           size="lg"
           variant="circular"
           src={imageUrl}
-          alt={name}
+          alt={name} {...({} as React.ComponentProps<typeof Avatar>)}
         />
         <div className="flex w-full flex-col gap-0.5">
           <div className="flex items-center justify-between">
-            <Typography variant="h5" color="blue-gray">
+            <Typography variant="h5" color="blue-gray" {...({} as React.ComponentProps<typeof Typography>)}>
               {name} {/* Display the name of the person */}
             </Typography>
             <div className="flex items-center gap-0">
               {stars.slice(0, rating)} {/* Display the number of stars based on rating */}
             </div>
           </div>
-          <Typography color="blue-gray">{title}</Typography> {/* Display the title */}
+          <Typography color="blue-gray" {...({} as React.ComponentProps<typeof Typography>)}>{title}</Typography> {/* Display the title */}
         </div>
       </CardHeader>
-      <CardBody className="mb-6 p-0">
-        <Typography>
+      <CardBody className="mb-6 p-0" {...({} as React.ComponentProps<typeof CardBody>)}>
+        <Typography {...({} as React.ComponentProps<typeof Typography>)}>
           &quot;{testimonial}&quot; {/* Display the testimonial message */}
         </Typography>
       </CardBody>

@@ -1,8 +1,8 @@
 // Render the component client-side
-'use client';
+"use client";
 
 // Import the components from the components directory
-import { UserDashboardTabs } from '@/components/UserDashboard';
+import { UserDashboardTabs } from "@/components/UserDashboard";
 
 const UserDashboard = () => {
   return (

@@ -1,4 +1,6 @@
-// Create and export the 'PrivacyPolicy' function
+// Importing the Link component from next/link for client-side navigation between pages
+import Link from "next/link";
+
 export default function PrivacyPolicy() {
     return (
       // Flexbox layout container
@@ -8,10 +10,9 @@ export default function PrivacyPolicy() {
         {/* Subheading */}
         <p className="mt-4 text-base lg:text-lg">Please check back soon for the full privacy policy.</p>
         {/* Return Link */}
-        <a className="px-5 py-2 text-sm 2xl:text-2xl font-semibold leading-6 text-black hover:focus:text-gray-600 hover:text-gray-600 hover:underline"
-        href="/">
-        Return <span aria-hidden="true">→</span></a>
+        <Link href="/" className="px-5 py-2 text-sm 2xl:text-2xl font-semibold leading-6 text-black hover:focus:text-gray-600 hover:text-gray-600 hover:underline">
+          Return <span aria-hidden="true">→</span>
+        </Link>
       </div>
     );
-  }
-  
+}

@@ -1,9 +1,9 @@
 // Import necessary styles and components
-import './/../globals.css';
+import ".//../globals.css";
 import Navbar from "../../components/Navbar"; // Import the Navbar component
-import RegisterForm from '../../components/RegisterForm'; // Import the RegisterForm component
+import RegisterForm from "../../components/RegisterForm"; // Import the RegisterForm component
 
-// Create and export the 'Register' function
+// Create and export the Register function
 export default function Register() {
   return (
     // Outer container

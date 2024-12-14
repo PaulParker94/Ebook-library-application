@@ -16,7 +16,7 @@ const LogoutButton = () => {
       <p className="text-center justify-center text-sm lg:text-lg font-normal text-black mb-4 w-4/5">
         Finished your session? Logout using the button below.
       </p>
-      <Button onClick={logout} className="mt-6 w-2/5 lg:w-1/5 sm:w-auto">
+      <Button onClick={logout} className="mt-6 w-2/5 lg:w-1/5 sm:w-auto" {...({} as React.ComponentProps<typeof Button>)}>
         Logout
       </Button>
     </div>

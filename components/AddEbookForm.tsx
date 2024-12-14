@@ -74,7 +74,7 @@ const AddEbookForm = () => {
     >
       <div className="mb-1 flex flex-col items-center justify-center gap-6 w-full max-w-lg min-h-screen">
         {/* Book Title Input */}
-        <Typography variant="h6" color="blue-gray" className="pt-3 text-lg underline">
+        <Typography variant="h6" color="blue-gray" className="pt-3 text-lg underline" {...({} as React.ComponentProps<typeof Typography>)}>
           Book Title
         </Typography>
         <Input
@@ -88,11 +88,11 @@ const AddEbookForm = () => {
           className="bg-white !border-t-blue-gray-200 focus:!border-t-gray-500"
           labelProps={{
             className: "before:content-none after:content-none", 
-          }}
+          }} {...({} as React.ComponentProps<typeof Input>)}
         />
 
         {/* Author Input */}
-        <Typography variant="h6" color="blue-gray" className="pt-3 text-lg underline">
+        <Typography variant="h6" color="blue-gray" className="pt-3 text-lg underline" {...({} as React.ComponentProps<typeof Typography>)}>
           Author
         </Typography>
         <Input
@@ -106,11 +106,11 @@ const AddEbookForm = () => {
           className="bg-white !border-t-blue-gray-200 focus:!border-t-gray-500"
           labelProps={{
             className: "before:content-none after:content-none", 
-          }}
+          }} {...({} as React.ComponentProps<typeof Input>)}
         />
 
         {/* Description Input */}
-        <Typography variant="h6" color="black" className="pt-3 text-lg underline">
+        <Typography variant="h6" color="black" className="pt-3 text-lg underline" {...({} as React.ComponentProps<typeof Typography>)}>
           Description
         </Typography>
         <textarea
@@ -173,7 +173,7 @@ const AddEbookForm = () => {
         />
 
         {/* Submit Button */}
-        <Button type="submit" className="m-6 w-3/5 lg:w-4/5 sm:w-auto">
+        <Button type="submit" className="m-6 w-3/5 lg:w-4/5 sm:w-auto" {...({} as React.ComponentProps<typeof Button>)}>
           Submit
         </Button>
       </div>

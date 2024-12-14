@@ -67,7 +67,7 @@ const RegisterForm = () => {
           value={username} 
           onChange={(e) => setUsername(e.target.value)} // Update Username on change
           required 
-          label="Username" 
+          label="Username" {...({} as React.ComponentProps<typeof Input>)}
         />
       </div>
 
@@ -81,7 +81,7 @@ const RegisterForm = () => {
           value={email} 
           onChange={(e) => setEmail(e.target.value)} // Update email on change
           required 
-          label="Email Address" 
+          label="Email Address" {...({} as React.ComponentProps<typeof Input>)}
         />
       </div>
 
@@ -95,7 +95,7 @@ const RegisterForm = () => {
           value={password} 
           onChange={(e) => setPassword(e.target.value)} // Update password on change
           required 
-          label="Password" 
+          label="Password" {...({} as React.ComponentProps<typeof Input>)}
         />
 
         {/* Eye Icon */}
@@ -119,7 +119,7 @@ const RegisterForm = () => {
           value={confirmPassword} 
           onChange={(e) => setConfirmPassword(e.target.value)} // Update confirm password on change
           required 
-          label="Confirm Password" 
+          label="Confirm Password" {...({} as React.ComponentProps<typeof Input>)}
         />
 
         {/* Eye Icon */}
@@ -142,7 +142,7 @@ const RegisterForm = () => {
       </a>
 
       {/* Submit Button */}
-      <Button variant="outlined" color="white" type="submit">
+      <Button variant="outlined" color="white" type="submit" {...({} as React.ComponentProps<typeof Button>)}>
         Register
       </Button>
 

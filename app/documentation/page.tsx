@@ -6,7 +6,7 @@ import Navbar from "../../components/Navbar";
 import { DocumentationViewer } from "../../components/DocumentDisplayer";
 import { Footer } from "../../components/Footer";
 
-// Create and export the 'DocumentationPage' function
+// Create and export the DocumentationPage function
 export default function DocumentationPage() {
   return (
     // Flexbox layout container

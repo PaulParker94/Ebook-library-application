@@ -2,6 +2,7 @@
 "use client";
 
 // Import necessary modules
+import Image from 'next/image';
 import { Typography } from "@material-tailwind/react";
 
 // Footer Component
@@ -13,7 +14,13 @@ export function Footer() {
       <div className="flex flex-row items-center flex-wrap justify-between bg-gray-50 text-black text-center p-6">
         {/* Logo Section */}
         <div className="flex justify-start">
-          <img src="images/logo.svg" alt="logo-ct" className="w-8 h-6" />
+        <Image
+          src="/images/logo.svg" 
+          alt="logo-ct"
+          className="w-8 h-6"
+          width={32}  
+          height={24} 
+        />
         </div>
 
         {/* Navigation Links */}
@@ -23,7 +30,7 @@ export function Footer() {
               as="a"
               href="/visualisations"
               color="blue-gray"
-              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500"
+              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500" {...({} as React.ComponentProps<typeof Typography>)}
             >
               Visualisations
             </Typography>
@@ -33,7 +40,7 @@ export function Footer() {
               as="a"
               href="/libraries"
               color="blue-gray"
-              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500"
+              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500" {...({} as React.ComponentProps<typeof Typography>)}
             >
               Libraries
             </Typography>
@@ -43,7 +50,7 @@ export function Footer() {
               as="a"
               href="/documentation"
               color="blue-gray"
-              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500"
+              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500" {...({} as React.ComponentProps<typeof Typography>)}
             >
               Documentation
             </Typography>
@@ -53,7 +60,7 @@ export function Footer() {
               as="a"
               href="/about"
               color="blue-gray"
-              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500"
+              className="text-sm font-normal transition-colors hover:text-gray-500 focus:text-gray-500" {...({} as React.ComponentProps<typeof Typography>)}
             >
               About
             </Typography>
@@ -67,7 +74,7 @@ export function Footer() {
       {/* Footer bottom text */}
       <Typography
         color="blue-gray"
-        className="text-center text-sm font-normal text-black py-4"
+        className="text-center text-sm font-normal text-black py-4" {...({} as React.ComponentProps<typeof Typography>)}
       >
         &copy; 2024 ShelfSpace
       </Typography>

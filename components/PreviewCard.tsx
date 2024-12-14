@@ -1,4 +1,5 @@
 // Import Necessary modules
+import Image from 'next/image';
 import {
   Card,
   CardHeader,
@@ -9,16 +10,16 @@ import {
 // HorizontalCard component
 export function HorizontalCard() {
   return (
-    <Card className="w-full max-w-[48rem] flex-col sm:flex-row">
+    <Card className="w-full max-w-[48rem] flex-col sm:flex-row" {...({} as React.ComponentProps<typeof Card>)}>
       
       {/* Card Body */}
-      <CardBody className="sm:w-3/5">
+      <CardBody className="sm:w-3/5" {...({} as React.ComponentProps<typeof CardBody>)}>
         
         {/* Title section */}
         <Typography
           variant="h6"
           color="gray"
-          className="mb-4 uppercase text-center sm:text-center"
+          className="mb-4 uppercase text-center sm:text-center" {...({} as React.ComponentProps<typeof Typography>)}
         >
           DATA
         </Typography>
@@ -27,7 +28,7 @@ export function HorizontalCard() {
         <Typography
           variant="h4"
           color="blue-gray"
-          className="mb-8 lg:mb-4 text-center sm:text-center"
+          className="mb-8 lg:mb-4 text-center sm:text-center" {...({} as React.ComponentProps<typeof Typography>)}
         >
           Visualisations using data taken from Project Gutenberg
         </Typography>
@@ -35,7 +36,7 @@ export function HorizontalCard() {
         {/* Description */}
         <Typography
           color="gray"
-          className="mb-4 font-normal text-center sm:text-left"
+          className="mb-4 font-normal text-center sm:text-left" {...({} as React.ComponentProps<typeof Typography>)}
         >
           The visualizations are powered by data retrieved from the Gutendex API,
           which fetches book catalog information from the Project Gutenberg website.
@@ -58,12 +59,14 @@ export function HorizontalCard() {
       <CardHeader
         shadow={false}
         floated={false}
-        className="ml-2 lg:mt-0 mt-[-2rem] w-full sm:w-2/5 shrink-0 rounded-t-none sm:rounded-l-none"
+        className="ml-2 lg:mt-0 mt-[-2rem] w-full sm:w-2/5 shrink-0 rounded-t-none sm:rounded-l-none" {...({} as React.ComponentProps<typeof CardHeader>)}
       >
-        <img
-          src="/images/Bar-Chart-Vertical.png"
-          alt="card-image"
-          className="h-full w-full object-cover"
+        <Image
+          src="/images/Bar-Chart-Vertical.png"  
+          alt="card-image"  
+          className="h-full w-full object-cover"  
+          width={500}  
+          height={500}  
         />
       </CardHeader>
     </Card>
