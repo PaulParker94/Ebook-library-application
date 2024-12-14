@@ -7,7 +7,8 @@
     "build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "lint": "next lint",
-    "hashPassword": "node scripts/hashPassword.js"
+    "hashPassword": "node scripts/hashPassword.js",
+    "prisma": "prisma"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
