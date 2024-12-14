@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint",
     "hashPassword": "node scripts/hashPassword.js"
   },
@@ -25,10 +24,10 @@
     "leaflet": "^1.9.4",
     "next": "^15.0.3",
     "pg": "^8.13.1",
-    "react": "^19.0.0",
+    "react": "^18.0.0",
     "react-cookie": "^7.2.2",
     "react-cookie-consent": "^9.0.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^18.0.0",
     "react-icons": "^5.4.0",
     "react-leaflet": "^4.2.1"
   },
