@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* globals.css */
+@layer base {
+  input:-webkit-autofill {
+    background-color: var(--custom-gray) !important;
+    color: var(--custom-text) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--custom-gray) inset !important;
+  }
+
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:hover {
+    background-color: var(--custom-gray) !important;
+    color: var(--custom-text) !important;
+  }
+
+  input:-moz-autofill {
+    background-color: var(--custom-gray) !important;
+    color: var(--custom-text) !important;
+  }
+}
+
+  .leaflet-container {
+    z-index: 0 !important; /* Ensure it stays behind other elements */
+  }
+  
+  

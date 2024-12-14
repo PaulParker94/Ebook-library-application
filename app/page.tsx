@@ -1,9 +1,21 @@
-export default function Home() {
+// Import the components from the components directory
+import Navbar from "../components/Navbar"; 
+import Hero from '../components/Hero';
+import { Footer } from "../components/Footer";
+
+// Create and export the 'HomePage' function
+export default function HomePage() {
   return (
-    <section className='py-24'>
-      <div className='container'>
-        <h1 className='text-3xl font-bold'>Next TS Starter</h1>
-      </div>
-    </section>
-  )
+    // Flexbox layout container
+    <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
+      <Navbar />
+      {/* Main content */}
+      <main className="flex-grow">
+        <Hero />
+      </main>
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
 }

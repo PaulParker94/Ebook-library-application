@@ -1,0 +1,237 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.1754458622377966,
+          53.300837391838719
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 1,
+        "OBJECTID_1" : 6,
+        "Name" : "Blackrock",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "BLACKROCK LIBRARY",
+        "EIRCODE" : "A94YF76",
+        "Address1" : "BLACKROCK LIBRARY",
+        "ADDR_LINE1" : "48 MAIN STREET",
+        "Town" : "BLACKROCK",
+        "County" : "CO. DUBLIN",
+        "ITM_EAST" : 721614.60400000005,
+        "ITM_NORTH" : 729391.20999999996,
+        "long" : -6.1754458620000001,
+        "lat" : 53.300837389999998,
+        "Phone" : "(01) 2888117",
+        "EMAIL" : "blackrocklib@dlrcoco.ie"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 2,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.149560986395195,
+          53.259856091286352
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 2,
+        "OBJECTID_1" : 7,
+        "Name" : "Cabinteely",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "CABINTEELY LIBRARY",
+        "EIRCODE" : "D18W773",
+        "Address1" : "Old Bray Road",
+        "ADDR_LINE1" : "Cabinteely",
+        "Town" : "Dublin 18",
+        "County" : "CO. DUBLIN",
+        "ITM_EAST" : 723457.84860000003,
+        "ITM_NORTH" : 724876.2108,
+        "long" : -6.149560986,
+        "lat" : 53.25985609,
+        "Phone" : "(01) 2855363",
+        "EMAIL" : "cabinteelylib@dlrcoco.ie"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 3,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.104578237942925,
+          53.277326488647063
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 3,
+        "OBJECTID_1" : 5,
+        "Name" : "Dalkey",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "DALKEY BRANCH LIBRARY",
+        "EIRCODE" : "A96AK28",
+        "Address1" : "DALKEY BRANCH LIBRARY",
+        "ADDR_LINE1" : "40/41 CASTLE STREET",
+        "Town" : "DALKEY",
+        "County" : "CO. DUBLIN",
+        "ITM_EAST" : 726407.15599999996,
+        "ITM_NORTH" : 726898.49899999995,
+        "long" : -6.1045782380000002,
+        "lat" : 53.27732649,
+        "Phone" : "(01) 2855317 / 2855277",
+        "EMAIL" : "dalkeylib@dlrcoco.ie"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 4,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.1646566118279349,
+          53.277503711984188
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 4,
+        "OBJECTID_1" : 8,
+        "Name" : "Deansgrange",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "DEANSGRANGE LIBRARY",
+        "EIRCODE" : "D18NY58",
+        "Address1" : "Clonkeen Drive",
+        "ADDR_LINE1" : "Deansgrange ",
+        "Town" : "Dublin 18",
+        "County" : "CO. DUBLIN",
+        "ITM_EAST" : 722400.37210000004,
+        "ITM_NORTH" : 726813.63210000005,
+        "long" : -6.1646566119999999,
+        "lat" : 53.277503709999998,
+        "Phone" : "(01) 2850860",
+        "EMAIL" : "deansgrangelib@dlrcoco.ie"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 5,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.2468782302331674,
+          53.292656190729183
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 5,
+        "OBJECTID_1" : 1,
+        "Name" : "Dundrum",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "CARNEGIE LIBRARY",
+        "EIRCODE" : "D14VP97",
+        "Address1" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "ADDR_LINE1" : "CARNEGIE LIBRARY",
+        "Town" : "CHURCHTOWN ROAD UPPER",
+        "County" : "DUBLIN 14",
+        "ITM_EAST" : 716876.08900000004,
+        "ITM_NORTH" : 728361.77899999998,
+        "long" : -6.2468782300000001,
+        "lat" : 53.292656190000002,
+        "Phone" : "(01) 2985000",
+        "EMAIL" : "dundrumlib@dlrcoco.ie"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 6,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.1270298745477891,
+          53.233535674954254
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 6,
+        "OBJECTID_1" : 3,
+        "Name" : "Shankill",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "SHANKILL LIBRARY",
+        "EIRCODE" : "D18DX43",
+        "Address1" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "ADDR_LINE1" : "SHANKILL LIBRARY",
+        "Town" : "LIBRARY ROAD",
+        "County" : "DUBLIN 18",
+        "ITM_EAST" : 725037.65399999998,
+        "ITM_NORTH" : 721987.10999999999,
+        "long" : -6.1270298749999998,
+        "lat" : 53.233535670000002,
+        "Phone" : "(01) 2823081",
+        "EMAIL" : "shankilllib@dlrcoco.ie"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 7,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.1966525279151421,
+          53.289817324132031
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 7,
+        "OBJECTID_1" : 4,
+        "Name" : "Stillorgan",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "STILLORGAN PUBLIC LIBRARY",
+        "EIRCODE" : "A94XT02",
+        "Address1" : "STILLORGAN PUBLIC LIBRARY",
+        "ADDR_LINE1" : "SAINT LAURENCE'S PARK",
+        "Town" : "STILLORGAN",
+        "County" : "CO. DUBLIN",
+        "ITM_EAST" : 720232.16799999995,
+        "ITM_NORTH" : 728129.27099999995,
+        "long" : -6.1966525280000004,
+        "lat" : 53.289817319999997,
+        "Phone" : "(01) 2889655",
+        "EMAIL" : "stillorganlib@dlrcoco.ie"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 8,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -6.1317844492839653,
+          53.292912776865442
+        ]
+      },
+      "properties" : {
+        "OBJECTID" : 8,
+        "OBJECTID_1" : 2,
+        "Name" : "DLR LEXICON",
+        "ORGANISATI" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "BUILDING_N" : "THE DLR LEXICON LIBRARY",
+        "EIRCODE" : "A96H283",
+        "Address1" : "DÚN LAOGHAIRE-RATHDOWN COUNTY COUNCIL",
+        "ADDR_LINE1" : "THE DLR LEXICON LIBRARY",
+        "Town" : "HAIGH TERRACE",
+        "County" : "DUN LAOGHAIRE",
+        "ITM_EAST" : 724547.59600000002,
+        "ITM_NORTH" : 728584.77000000002,
+        "long" : -6.1317844490000004,
+        "lat" : 53.292912780000002,
+        "Phone" : "(01) 2147975",
+        "EMAIL" : "dlrlexiconlib@dlrcoco.ie"
+      }
+    }
+  ]
+}

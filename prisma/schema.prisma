@@ -1,0 +1,280 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Ebook {
+  id           Int       @id @default(autoincrement())
+  title        String
+  author       String
+  description  String
+  publishedAt  DateTime
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  fileUrl      String
+  coverPageUrl String
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  isAdmin   Boolean  @default(false)
+  profilePicture String?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
+
+model auth_group {
+  id                     Int                      @id @default(autoincrement())
+  name                   String                   @unique @db.VarChar(150)
+  auth_group_permissions auth_group_permissions[]
+  auth_user_groups       auth_user_groups[]
+
+  @@index([name], map: "auth_group_name_a6ea08ec_like")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model auth_group_permissions {
+  id              Int             @id @default(autoincrement())
+  group_id        Int
+  permission_id   Int
+  auth_permission auth_permission @relation(fields: [permission_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auth_group_permissio_permission_id_84c5c92e_fk_auth_perm")
+  auth_group      auth_group      @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auth_group_permissions_group_id_b120cbf9_fk_auth_group_id")
+
+  @@unique([group_id, permission_id], map: "auth_group_permissions_group_id_permission_id_0cd325b0_uniq")
+  @@index([group_id], map: "auth_group_permissions_group_id_b120cbf9")
+  @@index([permission_id], map: "auth_group_permissions_permission_id_84c5c92e")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model auth_permission {
+  id                         Int                          @id @default(autoincrement())
+  name                       String                       @db.VarChar(255)
+  content_type_id            Int
+  codename                   String                       @db.VarChar(100)
+  auth_group_permissions     auth_group_permissions[]
+  django_content_type        django_content_type          @relation(fields: [content_type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auth_permission_content_type_id_2f476e4b_fk_django_co")
+  auth_user_user_permissions auth_user_user_permissions[]
+
+  @@unique([content_type_id, codename], map: "auth_permission_content_type_id_codename_01ab375a_uniq")
+  @@index([content_type_id], map: "auth_permission_content_type_id_2f476e4b")
+}
+
+model auth_user {
+  id                         Int                          @id @default(autoincrement())
+  password                   String                       @db.VarChar(128)
+  last_login                 DateTime?                    @db.Timestamptz(6)
+  is_superuser               Boolean
+  username                   String                       @unique @db.VarChar(150)
+  first_name                 String                       @db.VarChar(150)
+  last_name                  String                       @db.VarChar(150)
+  email                      String                       @db.VarChar(254)
+  is_staff                   Boolean
+  is_active                  Boolean
+  date_joined                DateTime                     @db.Timestamptz(6)
+  auth_user_groups           auth_user_groups[]
+  auth_user_user_permissions auth_user_user_permissions[]
+  django_admin_log           django_admin_log[]
+
+  @@index([username], map: "auth_user_username_6821ab7c_like")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model auth_user_groups {
+  id         Int        @id @default(autoincrement())
+  user_id    Int
+  group_id   Int
+  auth_group auth_group @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auth_user_groups_group_id_97559544_fk_auth_group_id")
+  auth_user  auth_user  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auth_user_groups_user_id_6a12ed8b_fk_auth_user_id")
+
+  @@unique([user_id, group_id], map: "auth_user_groups_user_id_group_id_94350c0c_uniq")
+  @@index([group_id], map: "auth_user_groups_group_id_97559544")
+  @@index([user_id], map: "auth_user_groups_user_id_6a12ed8b")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model auth_user_user_permissions {
+  id              Int             @id @default(autoincrement())
+  user_id         Int
+  permission_id   Int
+  auth_permission auth_permission @relation(fields: [permission_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm")
+  auth_user       auth_user       @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id")
+
+  @@unique([user_id, permission_id], map: "auth_user_user_permissions_user_id_permission_id_14a6b632_uniq")
+  @@index([permission_id], map: "auth_user_user_permissions_permission_id_1fbb5f2c")
+  @@index([user_id], map: "auth_user_user_permissions_user_id_a95ead1b")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model books_book {
+  id                     Int                      @id @default(autoincrement())
+  download_count         Int?
+  gutenberg_id           Int                      @unique
+  media_type             String                   @db.VarChar(16)
+  title                  String?                  @db.VarChar(1024)
+  copyright              Boolean?
+  books_book_authors     books_book_authors[]
+  books_book_bookshelves books_book_bookshelves[]
+  books_book_languages   books_book_languages[]
+  books_book_subjects    books_book_subjects[]
+  books_book_translators books_book_translators[]
+  books_format           books_format[]
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model books_book_authors {
+  id           Int          @id @default(autoincrement())
+  book_id      Int
+  person_id    Int
+  books_book   books_book   @relation(fields: [book_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_authors_book_id_ed3433e7_fk_books_book_id")
+  books_person books_person @relation(fields: [person_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_authors_person_id_feffc563_fk_books_person_id")
+
+  @@unique([book_id, person_id], map: "books_book_authors_book_id_author_id_8714badb_uniq")
+  @@index([person_id], map: "books_book_authors_author_id_984f1ab8")
+  @@index([book_id], map: "books_book_authors_book_id_ed3433e7")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model books_book_bookshelves {
+  id              Int             @id @default(autoincrement())
+  book_id         Int
+  bookshelf_id    Int
+  books_bookshelf books_bookshelf @relation(fields: [bookshelf_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_bookshelv_bookshelf_id_80cc77c5_fk_books_boo")
+  books_book      books_book      @relation(fields: [book_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_bookshelves_book_id_f820ff72_fk_books_book_id")
+
+  @@unique([book_id, bookshelf_id], map: "books_book_bookshelves_book_id_bookshelf_id_6016a70a_uniq")
+  @@index([book_id], map: "books_book_bookshelves_book_id_f820ff72")
+  @@index([bookshelf_id], map: "books_book_bookshelves_bookshelf_id_80cc77c5")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model books_book_languages {
+  id             Int            @id @default(autoincrement())
+  book_id        Int
+  language_id    Int
+  books_book     books_book     @relation(fields: [book_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_languages_book_id_e833b1f4_fk_books_book_id")
+  books_language books_language @relation(fields: [language_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_languages_language_id_e9f60572_fk_books_language_id")
+
+  @@unique([book_id, language_id], map: "books_book_languages_book_id_language_id_554fdccb_uniq")
+  @@index([book_id], map: "books_book_languages_book_id_e833b1f4")
+  @@index([language_id], map: "books_book_languages_language_id_e9f60572")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model books_book_subjects {
+  id            Int           @id @default(autoincrement())
+  book_id       Int
+  subject_id    Int
+  books_book    books_book    @relation(fields: [book_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_subjects_book_id_a578cff2_fk_books_book_id")
+  books_subject books_subject @relation(fields: [subject_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_subjects_subject_id_7445958f_fk_books_subject_id")
+
+  @@unique([book_id, subject_id], map: "books_book_subjects_book_id_subject_id_74dcf64a_uniq")
+  @@index([book_id], map: "books_book_subjects_book_id_a578cff2")
+  @@index([subject_id], map: "books_book_subjects_subject_id_7445958f")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model books_book_translators {
+  id           Int          @id @default(autoincrement())
+  book_id      Int
+  person_id    Int
+  books_book   books_book   @relation(fields: [book_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_translators_book_id_7b8cd893_fk_books_book_id")
+  books_person books_person @relation(fields: [person_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_book_translators_person_id_ad262373_fk_books_person_id")
+
+  @@unique([book_id, person_id], map: "books_book_translators_book_id_person_id_fd7c4b79_uniq")
+  @@index([book_id], map: "books_book_translators_book_id_7b8cd893")
+  @@index([person_id], map: "books_book_translators_person_id_ad262373")
+}
+
+model books_bookshelf {
+  id                     Int                      @id @default(autoincrement())
+  name                   String                   @unique @db.VarChar(64)
+  books_book_bookshelves books_book_bookshelves[]
+
+  @@index([name], map: "books_bookshelf_name_2642cad6_like")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model books_format {
+  id         Int        @id @default(autoincrement())
+  mime_type  String     @db.VarChar(32)
+  url        String     @db.VarChar(256)
+  book_id    Int
+  books_book books_book @relation(fields: [book_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "books_format_book_id_b948fa34_fk_books_book_id")
+
+  @@index([book_id], map: "books_format_book_id_b948fa34")
+}
+
+model books_language {
+  id                   Int                    @id @default(autoincrement())
+  code                 String                 @unique @db.VarChar(4)
+  books_book_languages books_book_languages[]
+
+  @@index([code], map: "books_language_code_217c406c_like")
+}
+
+model books_person {
+  id                     Int                      @id(map: "books_author_pkey") @default(autoincrement())
+  birth_year             Int?                     @db.SmallInt
+  death_year             Int?                     @db.SmallInt
+  name                   String                   @db.VarChar(128)
+  books_book_authors     books_book_authors[]
+  books_book_translators books_book_translators[]
+}
+
+model books_subject {
+  id                  Int                   @id @default(autoincrement())
+  name                String                @db.VarChar(256)
+  books_book_subjects books_book_subjects[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model django_admin_log {
+  id                  Int                  @id @default(autoincrement())
+  action_time         DateTime             @db.Timestamptz(6)
+  object_id           String?
+  object_repr         String               @db.VarChar(200)
+  action_flag         Int                  @db.SmallInt
+  change_message      String
+  content_type_id     Int?
+  user_id             Int
+  django_content_type django_content_type? @relation(fields: [content_type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "django_admin_log_content_type_id_c4bce8eb_fk_django_co")
+  auth_user           auth_user            @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "django_admin_log_user_id_c564eba6_fk_auth_user_id")
+
+  @@index([content_type_id], map: "django_admin_log_content_type_id_c4bce8eb")
+  @@index([user_id], map: "django_admin_log_user_id_c564eba6")
+}
+
+model django_content_type {
+  id               Int                @id @default(autoincrement())
+  app_label        String             @db.VarChar(100)
+  model            String             @db.VarChar(100)
+  auth_permission  auth_permission[]
+  django_admin_log django_admin_log[]
+
+  @@unique([app_label, model], map: "django_content_type_app_label_model_76bd3d3b_uniq")
+}
+
+model django_migrations {
+  id      Int      @id @default(autoincrement())
+  app     String   @db.VarChar(255)
+  name    String   @db.VarChar(255)
+  applied DateTime @db.Timestamptz(6)
+}
+
+model django_session {
+  session_key  String   @id @db.VarChar(40)
+  session_data String
+  expire_date  DateTime @db.Timestamptz(6)  // Corrected from Tismestamptz
+
+  @@index([expire_date], map: "django_session_expire_date_a5c62663")
+  @@index([session_key], map: "django_session_session_key_c0390e0f_like")
+}
+
