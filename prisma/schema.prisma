@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://postgres:Library_app24@db.tshuqzoktjjlooqfenvm.supabase.co:5432/postgres"
 }
 
 model Ebook {
