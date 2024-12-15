@@ -277,4 +277,3 @@ model django_session {
   @@index([expire_date], map: "django_session_expire_date_a5c62663")
   @@index([session_key], map: "django_session_session_key_c0390e0f_like")
 }
-
