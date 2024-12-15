@@ -16,8 +16,9 @@ async function resetEbookSequence() {
   // Set the next sequence ID for 'Ebook' table, defaulting to 1 if no records exist
   const nextId = (maxId._max.id || 0) + 1; 
   // Set 'Ebook' sequence to the next ID
-  await prisma.$executeRawUnsafe(`
-    SELECT setval('public."Ebook_id_seq"', ${nextId}, false); 
+  await prisma.$executeRaw`
+  SELECT setval('public."Ebook_id_seq"', ${nextId}, false);
+`;
   `);
 }
 

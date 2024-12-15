@@ -8,26 +8,26 @@ datasource db {
 }
 
 model Ebook {
-  id           Int       @id @default(autoincrement())
+  id           Int      @id @default(autoincrement())
   title        String
   author       String
   description  String
   publishedAt  DateTime
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
   fileUrl      String
   coverPageUrl String
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  isAdmin   Boolean  @default(false)
+  id             Int      @id @default(autoincrement())
+  email          String   @unique
+  password       String
+  isAdmin        Boolean  @default(false)
+  updatedAt      DateTime @updatedAt
+  createdAt      DateTime @default(now())
+  username       String   @unique
   profilePicture String?
-  updatedAt DateTime @updatedAt
-  createdAt DateTime @default(now())
 }
 
 model auth_group {
@@ -272,7 +272,7 @@ model django_migrations {
 model django_session {
   session_key  String   @id @db.VarChar(40)
   session_data String
-  expire_date  DateTime @db.Timestamptz(6)  // Corrected from Tismestamptz
+  expire_date  DateTime @db.Timestamptz(6)
 
   @@index([expire_date], map: "django_session_expire_date_a5c62663")
   @@index([session_key], map: "django_session_session_key_c0390e0f_like")
