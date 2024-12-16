@@ -5,6 +5,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Navbar from "../../components/Navbar";
 import BarChart from "../../components/BarChart"; 
+import { Footer } from "../../components/Footer";
 import {
   Menu,
   MenuHandler,
@@ -81,7 +82,7 @@ const VisualisationsPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-custom-gray mb-[-2rem]">
       <Navbar /> {/* Navbar */}
-      <main className="flex w-full px-8 py-4 justify-center items-center text-white">
+      <main className="flex w-full px-8 py-20 justify-center items-center text-white">
         {loading && <p>Loading data...</p>} {/* Show loading message if data is loading */}
 
         {/* Render the content only when data has finished loading, no error has occurred, and there are data points to display. */}
@@ -123,6 +124,8 @@ const VisualisationsPage = () => {
           <p>No data available to display</p>
         )}
       </main>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

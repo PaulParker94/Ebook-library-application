@@ -36,7 +36,7 @@ export function HorizontalCard() {
         {/* Description */}
         <Typography
           color="gray"
-          className="mb-4 font-normal text-center sm:text-left" {...({} as React.ComponentProps<typeof Typography>)}
+          className="mb-4 font-normal text-justify sm:text-left" {...({} as React.ComponentProps<typeof Typography>)}
         >
           The visualizations are powered by data retrieved from the Gutendex API,
           which fetches book catalog information from the Project Gutenberg website.
@@ -59,7 +59,7 @@ export function HorizontalCard() {
       <CardHeader
         shadow={false}
         floated={false}
-        className="ml-2 lg:mt-0 mt-[-2rem] w-full sm:w-2/5 shrink-0 rounded-t-none sm:rounded-l-none" {...({} as React.ComponentProps<typeof CardHeader>)}
+        className="ml-2 lg:mt-0 mt-[-4rem] w-full sm:w-2/5 shrink-0 rounded-t-none sm:rounded-l-none" {...({} as React.ComponentProps<typeof CardHeader>)}
       >
         <Image
           src="/images/Bar-Chart-Vertical.png"  

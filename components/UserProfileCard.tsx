@@ -143,7 +143,7 @@ export function UserProfileCard() {
       {/* Success message */}
       {successMessage && (
         <div className="lg:mt-2">
-          <p className="absolute bottom-4 lg:bottom-[-5rem] left-1/2 transform -translate-x-1/2 text-sm text-green-500">
+          <p className="absolute bottom-40 lg:bottom-[-5rem] left-1/2 transform -translate-x-1/2 text-sm text-green-500">
             {successMessage}
           </p>
         </div>

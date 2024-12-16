@@ -10,7 +10,7 @@ import { Footer } from "../../components/Footer";
 export default function DocumentationPage() {
   return (
     // Flexbox layout container
-    <div className="flex flex-col min-h-screen bg-custom-gray">
+    <div className="flex flex-col max-h-64 lg:min-h-screen bg-custom-gray">
       {/* Navbar */}
       <Navbar />
       <main className="flex-grow relative">
@@ -20,11 +20,11 @@ export default function DocumentationPage() {
             Project Documentation
           </h1>
           {/* Subheading */}
-          <p className="mt-2 mx-16 lg:mx-20 text-xs sm:text-lg md:text-xl lg:text-base 2xl:text-3xl leading-7 sm:leading-8 text-white font-extralight text-center 2xl:mt-20">
+          <p className="pb-4 lg:mt-2 mx-16 lg:mx-20 text-xs sm:text-lg md:text-xl lg:text-base 2xl:text-3xl leading-7 sm:leading-8 text-white font-extralight text-center 2xl:mt-20">
             Check out the documentation below.
           </p>
         </div>
-        <div className="relative min-h-screen min-w-full px-auto py-10 z-10">
+        <div className="relative min-w-full px-auto py-2 z-10">
           {/* Documentation viewer */}
           <DocumentationViewer />
         </div>

@@ -102,7 +102,7 @@ const RegisterForm = () => {
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
-          className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+          className="absolute top-1/2 right-[-3rem] lg:right-[-2rem] transform -translate-y-1/2 text-gray-500"
           aria-label="Toggle password visibility"
         >
           {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -126,7 +126,7 @@ const RegisterForm = () => {
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
-          className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+          className="absolute top-1/2 right-[-3rem] lg:right-[-2rem] transform -translate-y-1/2 text-gray-500"
           aria-label="Toggle password visibility"
         >
           {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -136,7 +136,7 @@ const RegisterForm = () => {
       {/* Already Have Account Link */}
       <a 
         href="/login" 
-        className="px-5 py-0 text-xs 2xl:text-2xl font-semibold leading-6 text-white hover:focus:text-gray-300 hover:text-gray-300 hover:underline 2xl:mt-20"
+        className="px-5 py-2 text-xs 2xl:text-2xl font-semibold leading-6 text-white hover:focus:text-gray-300 hover:text-gray-300 hover:underline 2xl:mt-20"
       >
         Already have an account? <span aria-hidden="true">→</span>
       </a>

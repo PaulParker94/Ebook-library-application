@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <div className="bg-custom-gray">
       {/* Hero Section */}
-      <div className="relative isolate px-6 pt-0 lg:px-48 bg-about-pattern bg-no-repeat bg-center bg-cover min-h-screen w-full">
+      <div className="relative isolate px-6 pt-0 lg:px-48 bg-about-pattern bg-no-repeat bg-center bg-cover min-h-[80vh] lg:min-h-screen w-full">
         {/* Container for the hero content */}
         <div className="mx-auto max-w-full">
           <div className="flex items-center justify-center lg:justify-between pt-2">

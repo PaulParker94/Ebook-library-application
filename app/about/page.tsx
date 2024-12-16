@@ -20,7 +20,7 @@ export default function AboutHome() {
         <AboutPage />
         {/* Accordion Section */}
         <div className="flex justify-center items-center w-full py-24">
-          <div className="box z-12 rounded-lg bg-custom-black px-4 py-4 mt-[-10rem] w-2/3 sm:w-2/3 md:w-3/4 lg:w-4/6 min-h-64 2xl:min-h-96 shadow-2xl flex flex-wrap">
+          <div className="box z-12 rounded-lg bg-custom-black px-4 py-4 mt-[-8rem] w-4/5 sm:w-2/3 md:w-3/4 lg:w-6/7 min-h-64 2xl:min-h-96 shadow-2xl flex flex-wrap">
             {/* Accordion */}
             <DefaultAccordion />
           </div>

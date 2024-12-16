@@ -104,7 +104,7 @@ const BarChart = ({ data }: { data: Point[] }) => {
   }, [data]); // Re-run effect when `data` changes
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-80 lg:min-h-screen mt-20'>
       <svg ref={svgRef}></svg> {/* Render the bar chart */}
     </div>
   );

@@ -162,7 +162,7 @@ export default function Hero() {
     />
 
       {/* Hero Section */}
-      <div className="relative isolate px-6 pt-0 lg:px-48 bg-hero-pattern bg-no-repeat bg-center bg-cover min-h-screen w-full" id="homeSection">
+      <div className="relative isolate px-6 pt-0 lg:px-48 bg-hero-pattern bg-no-repeat bg-center bg-cover lg:min-h-screen w-full" id="homeSection">
         <div className="mx-auto max-w-full">
           <div className="flex items-center justify-between pt-2">
             {/* Intro Header */}
@@ -202,7 +202,7 @@ export default function Hero() {
       <div className="relative bg-gray-50 min-h-screen lg:mb-[-28rem] pt-24 pb-24">
         {/* Responsive Grid for Cards */}
         <section 
-          className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-3 lg:grid-flow-col gap-4 justify-center items-center mx-4 sm:mx-10 lg:mx-20" >
+          className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-3 lg:grid-flow-col gap-4 justify-center items-center mx-4 mb-[-2rem] lg:mb-0 lg:pb-10 sm:mx-10 lg:mx-20" >
           {/* First Card */}
           <div className="rounded-2xl lg:row-span-3 bg-white lg:mt-[-40rem] min-h-64 sm:min-h-[16rem] lg:min-h-[20rem] shadow-2xl text-sm font-semibold text-black flex items-center justify-center">
             <CardDefault />
@@ -223,7 +223,7 @@ export default function Hero() {
       {/* Text Section */}
       <div className="relative bg-custom-gradient min-h-[600px] sm:min-h-screen pt-2 pb-14 w-full" id="textSection">
         <div className="flex justify-center items-center text-right mx-auto py-16 px-4 sm:py-14 sm:px-6 lg:px-8">
-          <div className="max-w-screen-md">
+          <div className="max-w-screen-md px-4">
             {/* Hero Heading */}
             <h1 className="text-center text-4xl text-white font-black tracking-normal sm:text-5xl lg:text-5xl">
               READ, EXPLORE, AND ENGAGE IN A WHOLE NEW WAY!
@@ -237,43 +237,43 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-full mx-auto pb-12">
+      <div className="flex items-center justify-center w-full px-4 pb-12">
         <CardWithLink />
       </div>
 
       {/* Book Cover Container Section */}
       <div className="relative min-h-screen pt-2" id="imageSection">
-        <div className="mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-          <div className="text-center">
+        <div className="mx-auto py-6 px-4 sm:py-16 sm:px-6 lg:px-8">
+          <div className="px-4">
             {/* Image Section Heading */}
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-7xl font-black tracking-normal 2xl:mt-14">
+            <h1 className="text-center text-4xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-7xl font-black tracking-normal 2xl:mt-14">
               DISCOVER A WORLD OF KNOWLEDGE
             </h1>
 
             {/* Book Cover Section Description */}
-            <p className="text-center justify-center mt-6 sm:mt-8 md:mt-10 2xl:mt-20 max-w-lg sm:max-w-xl md:max-w-2xl mx-auto text-sm sm:text-lg md:text-xl lg:text-base 2xl:text-3xl leading-6 sm:leading-7 lg:leading-8 font-sans font-semibold">
+            <p className="text-justify mt-6 sm:mt-8 md:mt-10 2xl:mt-20 max-w-lg sm:max-w-x1 md:max-w-2xl mx-auto text-sm sm:text-lg md:text-xl lg:text-base 2xl:text-3xl leading-6 sm:leading-7 lg:leading-8 font-sans font-semibold">
               Looking to explore a world of eBooks at your fingertips? Our platform offers a seamless experience for discovering, reading, and enjoying eBooks across all genres. Join a growing community of readers and access an ever-expanding library of titles, with such classics as seen below.
             </p>
 
             {/* Book Cover Grid */}
             <section className="w-full flex justify-center items-center gap-4 pt-16 2xl:mt-20">
               {/* First Book Cover */}
-              <div className="box z-12 rounded-lg bg-white bg-book-cover1 bg-cover w-full sm:w-1/3 md:w-1/4 lg:w-1/5 min-h-64 2xl:min-h-96 shadow-2xl text-sm font-semibold text-black flex items-center justify-center hover:bg-black hover:-translate-y-1 hover:scale-110 duration-300">
+              <div className="box z-12 rounded-lg bg-white bg-book-cover1 bg-cover w-full sm:w-1/3 md:w-1/4 lg:w-1/5 min-h-52 lg:h-80 2xl:min-h-96 shadow-2xl text-sm font-semibold text-black flex items-center justify-center hover:bg-black hover:-translate-y-1 hover:scale-110 duration-300">
               </div>
 
               {/* Second Book Cover */}
-              <div className="box z-11 rounded-lg bg-white bg-book-cover2 bg-cover w-full sm:w-1/3 md:w-1/4 lg:w-1/5 min-h-64 2xl:min-h-96 shadow-2xl text-sm font-semibold text-black flex items-center justify-center hover:bg-black hover:-translate-y-1 hover:scale-110 duration-300">
+              <div className="box z-11 rounded-lg bg-white bg-book-cover2 bg-cover w-full sm:w-1/3 md:w-1/4 lg:w-1/5 min-h-52 lg:h-80 2xl:min-h-96 shadow-2xl text-sm font-semibold text-black flex items-center justify-center hover:bg-black hover:-translate-y-1 hover:scale-110 duration-300">
               </div>
 
               {/* Third Book Cover */}
-              <div className="box z-10 rounded-lg bg-white bg-book-cover3 bg-cover w-full sm:w-1/3 md:w-1/4 lg:w-1/5 min-h-64 2xl:min-h-96 shadow-2xl text-sm font-semibold text-black flex items-center justify-center hover:bg-black hover:-translate-y-1 hover:scale-110 duration-300">
+              <div className="box z-10 rounded-lg bg-white bg-book-cover3 bg-cover w-full sm:w-1/3 md:w-1/4 lg:w-1/5 min-h-52 lg:h-80 2xl:min-h-96 shadow-2xl text-sm font-semibold text-black flex items-center justify-center hover:bg-black hover:-translate-y-1 hover:scale-110 duration-300">
               </div>
             </section>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-16 py-12">
+      <div className="container mx-auto mt-[-14rem] lg:mt-0 px-4 lg:px-16 py-12">
         {/* Testimonial Cards Container */}
         <div className="space-y-6">
           <div className="flex rounded-2xl items-center justify-center min-w-64 shadow-2xl text-sm font-semibold text-black">

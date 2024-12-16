@@ -92,7 +92,7 @@ const LoginForm = () => {
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)} // Toggle password visibility
-          className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+          className="absolute top-1/2 right-[-3rem] lg:right-[-2rem] transform -translate-y-1/2 text-gray-500"
           aria-label="Toggle password visibility"
         >
           {showPassword ? <FaEyeSlash /> : <FaEye />}

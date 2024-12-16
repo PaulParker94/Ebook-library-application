@@ -151,7 +151,7 @@ const AddEbookForm = () => {
           accept=".html"
           onChange={(e) => setFile(e.target.files?.[0] || null)} // Update file state
           required
-          className="mt-1 block w-full ml-20 px-12 lg:px-24"
+          className="mt-1 block ml-32 px-12 lg:px-24"
           ref={fileInputRef} // Reference for file input
         />
 
@@ -168,7 +168,7 @@ const AddEbookForm = () => {
           accept="image/*"
           onChange={(e) => setCoverPage(e.target.files?.[0] || null)} // Update cover page state
           required
-          className="mt-1 block w-full ml-20 px-12 lg:px-24"
+          className="mt-1 block ml-32 px-12 lg:px-24"
           ref={coverPageInputRef} // Reference for cover page input
         />
 
@@ -178,9 +178,9 @@ const AddEbookForm = () => {
         </Button>
       </div>
 
-      {/* Display message if there was an error or success */}
+      {/* Success or error message */}
       <div className="lg:mt-2">
-        {message && <p className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-sm text-red-500">{message}</p>}
+        {message && <p className="absolute lg:bottom-0 left-1/2 transform -translate-x-1/2 text-sm text-red-500">{message}</p>}
       </div>
     </form>
   );

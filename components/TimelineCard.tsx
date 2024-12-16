@@ -13,7 +13,7 @@ import { HomeIcon, BookOpenIcon, PhotoIcon } from "@heroicons/react/24/solid";
 // TimelineWithIcon component
 export function TimelineWithIcon() {
   return (
-    <div className="w-full max-w-[32rem] p-6 sm:px-8">
+    <div className="w-full max-w-[32rem] p-4 sm:px-8">
       <Timeline>
         <TimelineItem>
           <TimelineConnector />

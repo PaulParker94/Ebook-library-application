@@ -93,7 +93,7 @@ const MapComponent: React.FC = () => {
 
               // Create popup content box with relevant library details
               const popupContent = `
-                <div style="overflow-y: scroll; max-width: 230px; max-height: 230px; word-wrap: break-word; padding: 12px;">
+                <div style="overflow-y: scroll; max-width: 200px; max-height: 200px; word-wrap: break-word; padding: 12px;">
                   <h3 style="text-decoration: underline; font-size: 15px; font-weight: bold;">${Name}</h3>
                   <p><strong>Address:</strong> ${Address1}, ${Town}, ${County}, ${Eircode}</p>
                   <p><strong>Phone:</strong> ${Phone}</p>
@@ -137,7 +137,7 @@ const MapComponent: React.FC = () => {
     // Map container element
     <div
       ref={mapRef}
-      className="w-full rounded-lg overflow-hidden h-[50vw] sm:h-[50vw] lg:h-[40vw]" // Tailwind classes for styling
+      className="w-full rounded-lg overflow-hidden h-[100vw] sm:h-[50vw] lg:h-[40vw]" // Tailwind classes for styling
     />
   );
 };

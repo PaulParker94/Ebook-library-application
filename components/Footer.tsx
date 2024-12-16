@@ -24,7 +24,7 @@ export function Footer() {
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex flex-wrap items-center justify-center py-2 gap-y-2 gap-x-6 flex-1">
+        <ul className="flex flex-wrap items-center justify-center py-0 lg:py-2 gap-y-2 gap-x-6 flex-1">
           <li>
             <Typography
               as="a"
