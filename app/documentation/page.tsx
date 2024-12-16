@@ -20,7 +20,7 @@ export default function DocumentationPage() {
             Project Documentation
           </h1>
           {/* Subheading */}
-          <p className="pb-4 lg:mt-2 mx-16 lg:mx-20 text-xs sm:text-lg md:text-xl lg:text-base 2xl:text-3xl leading-7 sm:leading-8 text-white font-extralight text-center 2xl:mt-20">
+          <p className="pb-2 lg:mt-2 mx-16 lg:mx-20 text-xs sm:text-lg md:text-xl lg:text-base 2xl:text-3xl leading-7 sm:leading-8 text-white font-extralight text-center 2xl:mt-20">
             Check out the documentation below.
           </p>
         </div>

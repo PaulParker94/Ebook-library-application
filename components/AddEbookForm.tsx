@@ -151,7 +151,7 @@ const AddEbookForm = () => {
           accept=".html"
           onChange={(e) => setFile(e.target.files?.[0] || null)} // Update file state
           required
-          className="mt-1 block ml-12 lg:px-24"
+          className="mt-1 block lg:px-24 w-52 lg:w-96"
           ref={fileInputRef} // Reference for file input
         />
 
@@ -168,7 +168,7 @@ const AddEbookForm = () => {
           accept="image/*"
           onChange={(e) => setCoverPage(e.target.files?.[0] || null)} // Update cover page state
           required
-          className="mt-1 block ml-12 lg:px-24"
+          className="mt-1 block lg:px-24 w-52 lg:w-96"
           ref={coverPageInputRef} // Reference for cover page input
         />
 
