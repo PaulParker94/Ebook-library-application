@@ -59,7 +59,7 @@ export function HorizontalCard() {
       <CardHeader
         shadow={false}
         floated={false}
-        className="ml-2 lg:mt-0 mt-[-4rem] w-full sm:w-2/5 shrink-0 rounded-t-none sm:rounded-l-none" {...({} as React.ComponentProps<typeof CardHeader>)}
+        className="ml-2 lg:mt-0 mt-[-2rem] w-full sm:w-2/5 shrink-0 rounded-t-none sm:rounded-l-none" {...({} as React.ComponentProps<typeof CardHeader>)}
       >
         <Image
           src="/images/Bar-Chart-Vertical.png"  

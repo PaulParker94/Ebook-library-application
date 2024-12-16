@@ -273,7 +273,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="container mx-auto mt-[-14rem] lg:mt-0 px-4 lg:px-16 py-12">
+      <div className="container mx-auto mt-[-8rem] lg:mt-0 px-4 lg:px-16 py-12">
         {/* Testimonial Cards Container */}
         <div className="space-y-6">
           <div className="flex rounded-2xl items-center justify-center min-w-64 shadow-2xl text-sm font-semibold text-black">

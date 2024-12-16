@@ -7,7 +7,7 @@ import LoginForm from "../../components/LoginForm"; // Import LoginForm componen
 export default function Login() {
   return (
     // Outer container
-    <div className="bg-custom-gray px-4 pt-44 lg:pt-24 lg:px-8 min-h-screen flex-col">
+    <div className="bg-custom-gray px-4 pt-36 lg:pt-24 lg:px-8 min-h-screen flex-col">
       {/* Navbar */}
       <Navbar />
       {/* Main content  */}
