@@ -7,7 +7,7 @@ import RegisterForm from "../../components/RegisterForm"; // Import the Register
 export default function Register() {
   return (
     // Outer container
-    <div className="bg-custom-gray px-4 pt-24 lg:pt-14 lg:px-8 min-h-screen">
+    <div className="bg-custom-gray px-4 pt-20 lg:pt-14 lg:px-8 min-h-screen">
       {/* Navbar */}
       <Navbar />
       {/* Main content */}

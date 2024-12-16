@@ -13,12 +13,12 @@ export default function AboutPage() {
             {/* Intro Header */}
             <div className="mt-24 text-center lg:mt-32 lg:text-left pb-24">
               {/* Hero Heading */}
-              <h1 className="font-sans font-bold tracking-tight text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl 2xl:mt-52">
+              <h1 className="font-sans font-bold tracking-tight text-white underline text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl 2xl:mt-52">
                 ABOUT US
               </h1>
 
               {/* Hero Subheading */}
-              <p className="mt-8 text-xs sm:text-base md:text-xl lg:text-sm 2xl:text-3xl lg:w-96 max-w-40 sm:max-w-md md:max-w-lg leading-7 sm:leading-8 text-white font-light 2xl:mt-20">
+              <p className="mt-4 lg:mt-8 text-xs sm:text-base md:text-xl lg:text-sm 2xl:text-3xl lg:w-96 max-w-40 sm:max-w-md md:max-w-lg leading-7 sm:leading-8 text-white font-extralight lg:font-light 2xl:mt-20">
                 Explore a vast collection of ebooks and immerse yourself in the world of endless reading possibilities.
               </p>
             </div>

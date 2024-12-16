@@ -173,7 +173,7 @@ export default function Hero() {
               </h1>
   
               {/* Hero Subheading */}
-              <p className="mt-8 text-base sm:text-lg md:text-xl lg:text-base 2xl:text-3xl max-w-sm sm:max-w-md md:max-w-lg leading-7 sm:leading-8 text-white font-bold 2xl:mt-20">
+              <p className="mt-8 text-sm sm:text-lg md:text-xl lg:text-xl 2xl:text-3xl max-w-sm sm:max-w-md md:max-w-lg leading-7 sm:leading-8 text-white font-normal 2xl:mt-20">
                 Explore a vast catalogue of ebooks. Sign up for free.
               </p>
   
