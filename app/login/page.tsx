@@ -17,7 +17,7 @@ export default function Login() {
           Login
         </h1>
         {/* Subheading */}
-        <p className="mt-8 sm:mt-6 text-xs sm:text-sm font-light leading-6 sm:leading-8 pb-8 text-gray-200">
+        <p className="mt-8 sm:mt-6 text-xs sm:text-sm font-light overline leading-6 sm:leading-8 pb-8 text-gray-200">
           Enter your information below.
         </p>
         {/* Login form */}
