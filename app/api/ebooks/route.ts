@@ -7,8 +7,8 @@ const prisma = new PrismaClient();
 
 // Initialize Supabase client
 const supabase = createClient(
-  'postgresql://postgres.tshuqzoktjjlooqfenvm:Library_app24@aws-0-eu-west-1.pooler.supabase.com:5432/postgres', 
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzaHVxem9rdGpqbG9vcWZlbnZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQyMTA2NjYsImV4cCI6MjA0OTc4NjY2Nn0.1VcwDJLA5BOx-xcGpg_Gw25fixxgJMx1aSNkLdssiR4' 
+  'https://tshuqzoktjjlooqfenvm.supabase.co', // Supabase Project URL
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzaHVxem9rdGpqbG9vcWZlbnZtIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNDIxMDY2NiwiZXhwIjoyMDQ5Nzg2NjY2fQ.JGFT5rSkyoym7MiG_Pmo5IlWLxi16ZvmtP15_57UT3U' // 'service_role' Supabase API key 
 );
 
 // POST function
@@ -29,47 +29,47 @@ export async function POST(request: Request) {
 
     // Function to upload files to Supabase Storage
     const uploadToSupabase = async (file: File, folder: string): Promise<string> => {
+      // Upload the file to Supabase Storage buckets
       const { data, error } = await supabase
         .storage
-        .from('ebooks') // Make sure to create a bucket called 'ebooks' in Supabase Storage
+        .from(folder) // Supabase bucket
         .upload(`${folder}/${file.name}`, file.stream(), {
-          cacheControl: '3600', // Set cache control headers (optional)
-          upsert: true, // Overwrite if file already exists (optional)
+          upsert: true, // If the file already exists then overwrite it
+          duplex: 'half', // Allow file upload with duplex stream
         });
 
       if (error) {
-        throw new Error(error.message); // Handle the error if upload fails
+        throw new Error(`Supabase upload error: ${error.message}`);
       }
 
-      // Ensure the path exists and return the public URL
+      // Ensure the file path exists and return the public URL
       if (data?.path) {
-        return `https://your-supabase-url/storage/v1/object/public/ebooks/${data.path}`;
+        return `https://tshuqzoktjjlooqfenvm.supabase.co/storage/v1/object/public/${folder}/${data.path}`;
       } else {
-        throw new Error("Failed to get file URL after upload.");
+        throw new Error("Failed to get file URL after uploading ebook form data.");
       }
     };
 
-    // Upload the ebook and cover page files to Supabase Storage
+    // Upload the ebook file and cover page to Supabase Storage
     const fileUrl = await uploadToSupabase(file, 'ebooks');
-    const coverPageUrl = await uploadToSupabase(coverPage, 'covers');
+    const coverPageUrl = await uploadToSupabase(coverPage, 'coverPages');
 
-    // Saving the ebook information to the database
+    // Save the ebook information to the database
     const ebook = await prisma.ebook.create({
       data: {
         title,
         author,
         description,
         publishedAt,
-        fileUrl, // Now this will always be a string
-        coverPageUrl, // Now this will always be a string
+        fileUrl, 
+        coverPageUrl, 
       },
     });
 
     // Success message
     return NextResponse.json({ message: "Ebook added successfully!", ebook });
-  } catch (error) {
-    console.error('Error while adding ebook:', error); // Log the error for debugging
-    // Error handler
+  } catch {
+    // Error message
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 }); // Status code 500 for internal server error
   }
 }
