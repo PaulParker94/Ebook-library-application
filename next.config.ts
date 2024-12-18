@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   env: {
     JWT_SECRET: process.env.JWT_SECRET, // Expose JWT_SECRET to the app
   },
+  images: {
+    domains: ['tshuqzoktjjlooqfenvm.supabase.co'], // Add the Supabase domain here
+  },
 };
 
 export default nextConfig;

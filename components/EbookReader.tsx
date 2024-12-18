@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 // Defining the props interface for EbookReader component
 interface EbookReaderProps {
-  ebookId: number; // ebookId is passed as a prop to fetch the specific ebook data
+  ebookId: number; 
 }
 
 // Define an interface for the EbookData object
@@ -12,7 +12,7 @@ interface EbookData {
   title: string;
   description: string;
   publishedAt: Date;
-  fileUrl: string;
+  fileUrl: string; // URL to the file in Supabase storage bucket
 }
 
 // EbookReader component for displaying an ebook based on the ebookId
@@ -25,6 +25,9 @@ const EbookReader: React.FC<EbookReaderProps> = ({ ebookId }) => {
     loading: true,
     error: null,
   });
+
+  // This state will hold the fetched file content 
+  const [fileContent, setFileContent] = useState<string | null>(null);
 
   // useEffect hook to fetch ebook data when the ebookId changes
   useEffect(() => {
@@ -41,8 +44,18 @@ const EbookReader: React.FC<EbookReaderProps> = ({ ebookId }) => {
         const data: EbookData = await response.json();
         setEbookData(data);
         setStatus({ loading: false, error: null });
-      } catch {
-        setStatus({ loading: false, error: "Failed to fetch ebook data" });
+
+        // Fetch the file content from the URL (from Supabase storage or API)
+        const fileResponse = await fetch(data.fileUrl);
+        if (!fileResponse.ok) {
+          throw new Error("Failed to fetch file content");
+        }
+
+        // Assume the file is HTML or another format that can be directly injected
+        const fileText = await fileResponse.text();
+        setFileContent(fileText); // Store the file content in state
+      } catch (error) {
+        setStatus({ loading: false, error: error.message || "Failed to fetch ebook data" });
       }
     };
 
@@ -60,12 +73,17 @@ const EbookReader: React.FC<EbookReaderProps> = ({ ebookId }) => {
       {/* If fileUrl is present, display the ebook content */}
       {ebookData?.fileUrl ? (
         <div>
-          <iframe
-            src={ebookData.fileUrl}
-            width="100%"
-            height="600"
-            title={ebookData.title}
-          />
+          {/* If file content is loaded, render it in an iframe */}
+          {fileContent ? (
+            <iframe
+              srcDoc={fileContent} // Using `srcDoc` for inline HTML rendering
+              width="100%"
+              height="600"
+              title={ebookData.title}
+            />
+          ) : (
+            <div>Loading file content...</div>
+          )}
         </div>
       ) : (
         <div className="text-red-500 py-4">No file available for this ebook</div>
