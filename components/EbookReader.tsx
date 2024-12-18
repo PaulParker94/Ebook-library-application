@@ -54,8 +54,8 @@ const EbookReader: React.FC<EbookReaderProps> = ({ ebookId }) => {
         // Assume the file is HTML or another format that can be directly injected
         const fileText = await fileResponse.text();
         setFileContent(fileText); // Store the file content in state
-      } catch (error) {
-        setStatus({ loading: false, error: error.message || "Failed to fetch ebook data" });
+      } catch {
+        setStatus({ loading: false, error:"Failed to fetch ebook data" });
       }
     };
 

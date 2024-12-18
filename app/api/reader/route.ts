@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
 
     // Return a 500 error (Internal Server Error) with details about the error
     return NextResponse.json(
-      { error: "Failed to retrieve ebook data", details: error.message },  // Error message with details
+      { error: "Failed to retrieve ebook data" }, 
       { status: 500 }  // HTTP status code 500 (Internal Server Error)
     );
   }
