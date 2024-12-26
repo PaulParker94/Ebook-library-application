@@ -143,15 +143,6 @@ export function AdminDashboardTabs() {
                   />
                 )}
 
-                <a
-                  href={ebooks.find((ebook) => ebook.id === ebookId)?.fileUrl || "#"} // Link to the ebooks file, opens in a new tab
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm lg:text-base font-light text-red-500 underline mt-6 block hover:text-red-400"
-                >
-                  Open ebook in a new window
-                </a>
-
                 {/* Display the EbookReader component */}
                 <div className="overflow-hidden mt-4">
                   <EbookReader ebookId={ebookId} />

@@ -40,18 +40,18 @@ const EbookReader: React.FC<EbookReaderProps> = ({ ebookId }) => {
           throw new Error("Failed to fetch ebook data");
         }
 
-        // Parses the fetched ebook data and updates the state; handles errors if the fetch fails
+        // Parses the fetched ebook data and updates the state
         const data: EbookData = await response.json();
         setEbookData(data);
         setStatus({ loading: false, error: null });
 
-        // Fetch the file content from the URL (from Supabase storage or API)
+        // Fetch the file content from the URL 
         const fileResponse = await fetch(data.fileUrl);
         if (!fileResponse.ok) {
           throw new Error("Failed to fetch file content");
         }
 
-        // Assume the file is HTML or another format that can be directly injected
+        // Assume the file is HTML 
         const fileText = await fileResponse.text();
         setFileContent(fileText); // Store the file content in state
       } catch {
@@ -62,7 +62,7 @@ const EbookReader: React.FC<EbookReaderProps> = ({ ebookId }) => {
     fetchEbook();
   }, [ebookId]); // Runs when ebookId changes
 
-  // If the data is still loading, show a loading message
+  // Show a loading message
   if (status.loading) return <div>Loading...</div>;
 
   // If there's an error, show the error message
@@ -76,7 +76,7 @@ const EbookReader: React.FC<EbookReaderProps> = ({ ebookId }) => {
           {/* If file content is loaded, render it in an iframe */}
           {fileContent ? (
             <iframe
-              srcDoc={fileContent} // Using `srcDoc` for inline HTML rendering
+              srcDoc={fileContent} // Using srcDoc for inline HTML rendering
               width="100%"
               height="600"
               title={ebookData.title}
